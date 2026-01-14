@@ -239,11 +239,15 @@ body {
   animation: spin 10s linear infinite;
 }
 
-.tech-icon {
-  font-size: 10rem;
-  color: rgba(255, 255, 255, 0.9);
+.hero-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
   z-index: 2;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Common Section */
