@@ -97,7 +97,6 @@ body {
   cursor: pointer;
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -106,6 +105,8 @@ body {
   padding: 0 10%;
   position: relative;
   overflow: hidden;
+  padding-top: 80px;
+  /* Add top padding for fixed navbar */
 }
 
 .hero::before {
@@ -178,6 +179,8 @@ body {
 .cta-buttons {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  /* Allow wrapping on small screens */
 }
 
 .btn {
@@ -223,6 +226,8 @@ body {
   align-items: center;
   z-index: 1;
   opacity: 0;
+  max-width: 100%;
+  /* Ensure it doesn't overflow */
   animation:
     fadeUp 1s ease 0.3s forwards,
     float 6s ease-in-out infinite;
@@ -249,6 +254,10 @@ body {
   border: 4px solid var(--primary-color);
   box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
   animation: float 6s ease-in-out infinite;
+  max-width: 90%;
+  /* Responsive connection */
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 /* Common Section */
@@ -327,7 +336,7 @@ section {
 /* Skills Section */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
@@ -380,7 +389,7 @@ section {
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
@@ -399,13 +408,7 @@ section {
   justify-content: center;
 }
 
-padding: 2.5rem;
-border-radius: 20px;
-border: 1px solid rgba(255, 255, 255, 0.05);
-transition: var(--transition);
-position: relative;
-overflow: hidden;
-}
+
 
 .project-card:hover {
   transform: translateY(-10px);
@@ -473,7 +476,8 @@ overflow: hidden;
 
 .contact-info {
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
+  /* Reduced min-width */
 }
 
 .info-item {
@@ -517,7 +521,8 @@ overflow: hidden;
 
 .contact-form {
   flex: 1.5;
-  min-width: 350px;
+  min-width: 280px;
+  /* Reduced min-width */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -648,9 +653,11 @@ footer {
   .hero {
     flex-direction: column-reverse;
     justify-content: center;
-    gap: 4rem;
+    gap: 3rem;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 7rem;
+    min-height: auto;
+    padding-bottom: 4rem;
   }
 
   .hero-content {
@@ -676,25 +683,40 @@ footer {
     top: 70px;
     right: 0;
     width: 100%;
-    background: var(--bg-secondary);
+    background: rgba(15, 15, 15, 0.98);
+    /* Solid background for legibility */
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateY(-150%);
     transition: var(--transition);
+    height: auto;
   }
 
   .nav-links.active {
     transform: translateY(0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   }
 
   .hamburger {
     display: block;
+    z-index: 1001;
+    /* Ensure above everything */
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 4rem 5%;
+    /* Reduce horizontal padding */
   }
 
   .name {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    /* Smaller font */
   }
 
   .tech-icon {
@@ -704,5 +726,38 @@ footer {
   .hero-visual {
     width: 300px;
     height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .hero-visual {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-width: 100%;
+    /* Full width on very small screens */
   }
 }
