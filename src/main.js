@@ -125,7 +125,7 @@ if (projectsGrid) {
     const autoScroll = () => {
         if (projectsGrid.matches(':hover')) return; // Pause on hover
 
-        const cardWidth = 320 + 32; // card width + gap (approx)
+        const cardWidth = 260 + 32; // card width + gap (approx)
         const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
 
         if (projectsGrid.scrollLeft >= maxScroll - 10) {

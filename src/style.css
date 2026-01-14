@@ -403,7 +403,7 @@ section {
 }
 
 .project-card {
-  min-width: 320px;
+  min-width: 260px;
   flex: 0 0 auto;
   scroll-snap-align: start;
 
