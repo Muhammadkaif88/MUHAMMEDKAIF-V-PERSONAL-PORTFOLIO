@@ -153,6 +153,7 @@ body {
   background: linear-gradient(to right, #ffffff, #a5a5a5);
   -webkit-background-clip: text;
   color: transparent;
+  white-space: nowrap;
 }
 
 .title {
