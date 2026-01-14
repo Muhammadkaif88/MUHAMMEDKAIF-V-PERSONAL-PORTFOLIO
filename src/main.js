@@ -114,26 +114,4 @@ if (closePopupBtn) {
 }
 
 // Auto-scroll Projects
-const projectsGrid = document.querySelector('.projects-grid');
 
-if (projectsGrid) {
-    let scrollAmount = 0;
-    const scrollStep = 1;
-    const delay = 3000; // 3 seconds pause between slides for card-by-card scroll, or use continuous
-
-    // Better auto-scroll: Scroll one card width every few seconds
-    const autoScroll = () => {
-        if (projectsGrid.matches(':hover')) return; // Pause on hover
-
-        const cardWidth = 260 + 32; // card width + gap (approx)
-        const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
-
-        if (projectsGrid.scrollLeft >= maxScroll - 10) {
-            projectsGrid.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            projectsGrid.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-    };
-
-    setInterval(autoScroll, 3000);
-}
