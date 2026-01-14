@@ -379,12 +379,34 @@ section {
 
 /* Projects Section */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  overflow-x: auto;
   gap: 2rem;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
 }
 
 .project-card {
+  min-width: 320px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+
   background: var(--bg-card);
   padding: 2.5rem;
   border-radius: 20px;
