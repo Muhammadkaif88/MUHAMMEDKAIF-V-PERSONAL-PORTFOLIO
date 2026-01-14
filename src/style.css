@@ -222,8 +222,8 @@ body {
   align-items: center;
   z-index: 1;
   opacity: 0;
-  animation: 
-    fadeUp 1s ease 0.3s forwards, 
+  animation:
+    fadeUp 1s ease 0.3s forwards,
     float 6s ease-in-out infinite;
 }
 
@@ -531,12 +531,69 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: var(--bg-secondary);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+  transform: translateY(20px);
+  transition: var(--transition);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-overlay.show .popup-content {
+  transform: translateY(0);
+}
+
+.popup-content i {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.popup-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.popup-content p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
 /* Animations */
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -544,14 +601,27 @@ footer {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Response */
@@ -571,7 +641,7 @@ footer {
   .cta-buttons {
     justify-content: center;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -607,11 +677,11 @@ footer {
   .name {
     font-size: 3rem;
   }
-  
+
   .tech-icon {
     font-size: 6rem;
   }
-  
+
   .hero-visual {
     width: 300px;
     height: 300px;

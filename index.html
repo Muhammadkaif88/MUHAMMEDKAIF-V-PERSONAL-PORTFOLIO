@@ -202,14 +202,25 @@
             <a href="#"><i class="fab fa-github"></i></a>
           </div>
         </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         <form class="contact-form"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeOdLw-D1sxcwJYDA_q5IR3qQyiKyF1SQEQH3okAsoZSrntxA/formResponse"
-          method="POST" target="_blank">
+          method="POST" target="hidden_iframe">
           <input type="text" name="entry.897604845" placeholder="Your Name" required>
           <input type="email" name="entry.202386816" placeholder="Your Email" required>
           <textarea name="entry.232186436" placeholder="Your Message" rows="5" required></textarea>
           <button type="submit" class="btn primary">Send Message</button>
         </form>
+      </div>
+
+      <!-- Confirmation Popup -->
+      <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+          <i class="fas fa-check-circle"></i>
+          <h3>Message Sent!</h3>
+          <p>Thank you for contacting me. I will get back to you shortly.</p>
+          <button id="close-popup" class="btn primary">Close</button>
+        </div>
       </div>
     </section>
 
